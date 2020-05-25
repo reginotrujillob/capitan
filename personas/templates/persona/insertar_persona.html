@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+
+{% block tabla %}
+<form method="post">
+    <div class="panel-body">
+    {%csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-danger">
+        <span class="fa fa-save">
+            Guardar
+        </span>
+    </button>
+    <a href="{% url 'personas:listar_personas' %}" class="btn btn-success"><span class="fa fa-undo">Regresar</span></a>
+</div>
+</form>
+
+{% endblock tabla %}
